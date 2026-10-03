@@ -1,55 +1,160 @@
-
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio</title>
-  <!-- Google Fonts（丸文字） -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;800&display=swap" rel="stylesheet">
-  <!-- CSSファイルの読み込み -->
+
+  <title>Yoshiyasu | Frontend Engineer</title>
+
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <!-- ファーストビュー -->
-  <section class="hero">
-    <h1>Hello! 👋</h1>
-    <p>Webデザインとフロントエンドを勉強中の〇〇です！</p>
-    <a href="#contact" class="btn-pop">メッセージを送る 📩</a>
-  </section>
+  <header>
+    <div class="container">
 
-  <!-- コンテンツ領域 -->
-  <div class="container">
-    
-    <!-- 自己紹介カード -->
-    <div class="card">
-      <h2>About Me 🎨</h2>
-      <p>使いやすさと「ちょっとしたワクワク」を感じられるWebサイトを作るのが目標です。ポップな色使いとアニメーションが得意です！</p>
+      <a href="#" class="logo">Yoshiyasu</a>
+
+      <nav>
+        <a href="#works">Works</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button id="themeButton">Dark</button>
+
     </div>
+  </header>
 
-    <!-- スキルカード -->
-    <div class="card">
-      <h2>Skills 🚀</h2>
-      <div>
-        <span class="skill-tag">HTML5</span>
-        <span class="skill-tag">CSS3</span>
-        <span class="skill-tag">JavaScript</span>
-        <span class="skill-tag">Figma</span>
+
+  <main>
+
+    <!-- メインビジュアル -->
+    <section class="hero">
+
+      <div class="container">
+
+        <p class="small-text">Frontend Engineer / Web Designer</p>
+
+        <h1>Yoshiyasu</h1>
+
+        <p class="catch">
+          操作感にこだわる、<br>
+          フロントエンドエンジニア。
+        </p>
+
+        <p class="description">
+          店長6年、物流3年を経験。
+          現場で培った「人が迷わない仕組みづくり」を
+          Web制作に活かしています。
+        </p>
+
       </div>
+
+    </section>
+
+
+    <!-- Works -->
+    <section id="works">
+
+      <div class="container">
+
+        <h2>Works</h2>
+
+        <div class="works">
+
+
+          <a href="work-contrast-caliper.html">
+            <div>
+              <h3>Contrast Caliper</h3>
+              <p>色のコントラストを確認するWebアプリ</p>
+            </div>
+
+            <span>2026</span>
+          </a>
+
+
+          <a href="work-cafe-lumiere.html">
+            <div>
+              <h3>Cafe Lumiere</h3>
+              <p>架空カフェのWebサイト</p>
+            </div>
+
+            <span>2026</span>
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- About -->
+    <section id="about">
+
+      <div class="container">
+
+        <h2>About</h2>
+
+        <div class="about">
+
+          <div>
+
+            <p>
+              「触っていて気持ちいい」と感じられる
+              UIを作ることに興味があります。
+            </p>
+
+            <p>
+              接客と物流の経験を活かし、
+              ユーザーが迷わず操作できる画面づくりを目指しています。
+            </p>
+
+          </div>
+
+
+          <div class="skills">
+
+            <div>
+              <span>店舗運営</span>
+              <strong>約6年</strong>
+            </div>
+
+            <div>
+              <span>物流</span>
+              <strong>約3年</strong>
+            </div>
+
+            <div>
+              <span>Frontend</span>
+              <strong>HTML / CSS / JavaScript</strong>
+            </div>
+
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+  <footer>
+    <div class="container">
+      <p>© 2026 Yoshiyasu</p>
     </div>
+  </footer>
 
-    <!-- 制作物カード -->
-    <div class="card">
-      <h2>Works 💻</h2>
-      <p>制作したWebサイトやミニアプリをここに並べる予定です。</p>
-    </div>
 
-  </div>
-
-  <!-- JavaScriptファイルの読み込み -->
   <script src="script.js"></script>
+
 </body>
+
 </html>

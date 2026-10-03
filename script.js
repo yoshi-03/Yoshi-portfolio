@@ -1,16 +1,26 @@
+const works = document.querySelectorAll(".works a");
 
-// 画面内に要素が入ってきたかを検知する処理
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('show'); // 画面に入ったらshowクラスを追加
-    }
+works.forEach(function (work) {
+
+  work.addEventListener("mouseenter", function () {
+
+    work.style.paddingLeft = "15px";
+
   });
-}, {
-  threshold: 0.2 // 要素が20%表示されたら発動
+
+
+  work.addEventListener("mouseleave", function () {
+
+    work.style.paddingLeft = "0";
+
+  });
+
 });
 
-// すべての.card要素を監視対象にする
-document.querySelectorAll('.card').forEach(card => {
-  observer.observe(card);
-});
+const themeButton = document.querySelector("#themeButton");
+
+if (themeButton) {
+  themeButton.addEventListener("click", function () {
+    document.body.classList.toggle("dark");
+  });
+}
