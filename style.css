@@ -21,8 +21,15 @@ a {
 
 .container {
   width: 90%;
-  max-width: 1000px;
+  max-width: 1000px; /* PCでの表示上限 */
   margin: 0 auto;
+}
+
+/* すべての画像が枠からはみ出ない基本設定 */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 
@@ -107,44 +114,36 @@ section h2 {
 }
 
 .works {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-}
-
-.work {
-  padding: 30px;
-  border: 1px solid #000;
-}
-
-.work:hover {
-  background: #000;
-  color: #fff;
-}
-
-.work h3 {
-  margin-top: 0;
-}
-
-.work p {
-  color: #666;
-}
-
-.work:hover p {
-  color: #aaa;
+  display: flex;
+  flex-direction: column;
 }
 
 .works a {
-    display: block;
-    padding: 30px 0;
-    border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0;
+  border-bottom: 1px solid #ccc;
+  transition: opacity 0.2s;
+}
+
+.works a:last-child {
+  border-bottom: none;
 }
 
 .works a:hover {
-    opacity: 0.6;
+  opacity: 0.6;
 }
 
-/* About */
+.works h3 {
+  margin: 0 0 8px;
+}
+
+.works p {
+  margin: 0;
+  color: #666;
+}
+
 
 /* About */
 
@@ -166,11 +165,11 @@ section h2 {
   justify-content: space-between;
   align-items: center;
   padding-bottom: 12px;
-  border-bottom: 1px solid var(--border-sub-color, #ccc);
+  border-bottom: 1px solid #ccc;
 }
 
 .skills span {
-  color: var(--text-sub-color, #666);
+  color: #666;
 }
 
 
@@ -194,7 +193,7 @@ footer {
 
 
 /* ====================
-   作品ページ
+   作品ページ（Cafe Lumiere等）
 ==================== */
 
 .work-header {
@@ -214,12 +213,12 @@ footer {
 }
 
 
-/* About */
+/* Info (About) */
 
 .info {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
 }
 
 .info p {
@@ -229,15 +228,19 @@ footer {
 }
 
 
-/* Screenshot */
+/* 画像の巨大化防止・共通スタイル */
 
 .image-box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 400px;
+  width: 100%;
+  max-width: 800px; /* PCでのメイン画像の最大幅制限 */
+  margin: 0 auto;
+  padding: 10px;
   border: 1px solid #000;
-  color: #666;
+}
+
+/* スマホ画面写真の個別制限 */
+.cafe-screen .image-box {
+  max-width: 320px; /* スマホ画面はコンパクトに表示 */
 }
 
 
@@ -311,16 +314,14 @@ body.dark section {
   border-color: #444;
 }
 
-body.dark .work {
-  border-color: #fff;
-}
-
 body.dark .info p,
 body.dark .image-box {
   border-color: #fff;
 }
 
-body.dark .point {
+body.dark .point,
+body.dark .skills div,
+body.dark .works a {
   border-color: #444;
 }
 
@@ -340,15 +341,16 @@ body.dark .links a:hover {
 }
 
 body.dark .description,
-body.dark .work p,
+body.dark .works p,
 body.dark .point p,
+body.dark .skills span,
 body.dark footer {
   color: #aaa;
 }
 
 
 /* ====================
-   スマホ
+   スマホ対応 (レスポンシブ)
 ==================== */
 
 @media (max-width: 700px) {
@@ -369,20 +371,12 @@ body.dark footer {
     padding: 60px 0;
   }
 
-  .works {
-    grid-template-columns: 1fr;
-  }
-
   .about {
     grid-template-columns: 1fr;
   }
 
   .info {
-    grid-template-columns: 1fr;
-  }
-
-  .image-box {
-    min-height: 250px;
+    grid-template-columns: repeat(2, 1fr); /* スマホでは2列に変更 */
   }
 
   .links {
@@ -396,19 +390,4 @@ body.dark footer {
   .next-work h2 {
     font-size: 30px;
   }
-}
-
-.image-box {
-  padding: 20px;
-  border: 1px solid #000;
-}
-
-.image-box img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-body.dark .image-box {
-  border-color: #fff;
 }
