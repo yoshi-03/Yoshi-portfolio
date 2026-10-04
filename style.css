@@ -146,10 +146,31 @@ section h2 {
 
 /* About */
 
+/* About */
+
 .about {
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 40px;
+  grid-template-columns: 1fr 1fr; 
+  gap: 60px;                     
+  align-items: start;            
+}
+
+.skills {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.skills div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-sub-color, #ccc);
+}
+
+.skills span {
+  color: var(--text-sub-color, #666);
 }
 
 
